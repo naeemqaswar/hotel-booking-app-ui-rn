@@ -7,11 +7,7 @@ import {
     TouchableWithoutFeedback,
 } from 'react-native';
 
-import { NavigationContainer } from '@react-navigation/native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-// import { createMaterialBottomTabNavigator, createBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 
 const TabBar = ({ state, descriptors, navigation }) => {
     const focusedOptions = descriptors[state.routes[state.index].key].options;
@@ -127,14 +123,12 @@ const styles = StyleSheet.create({
         height: 40,
     },
     navActionBtn:{
-        // flex: 1,
         // borderWidth: 1,
         paddingHorizontal: 10,
         justifyContent: 'center',
     },
     navActionBtnFocused:{
         paddingVertical: 10,
-        // paddingHorizontal: 25,
         width: '38%',
         flexDirection: 'row',
         justifyContent: 'center',
@@ -145,6 +139,5 @@ const styles = StyleSheet.create({
     navActionText:{
         color: '#fff',
         fontSize: 16,
-        // lineHeight: 20,
     },
 });
