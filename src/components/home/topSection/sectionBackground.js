@@ -20,7 +20,6 @@ const styles = StyleSheet.create({
         flex: 1,
         width: '100%',
         height: '100%',
-        // zIndex: 999,
         position: 'absolute',
         backgroundColor: 'rgba(14, 14, 14, 0.7)',
     },
