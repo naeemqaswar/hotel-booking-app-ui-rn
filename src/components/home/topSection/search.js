@@ -24,9 +24,6 @@ export default function Search() {
 
 const styles = StyleSheet.create({
     container: {
-        // flex: 1,
-        // borderWidth: 1,
-        // borderColor: 'red',
         height: '75%',
         justifyContent: 'center',
         alignItems: 'center',
@@ -38,8 +35,8 @@ const styles = StyleSheet.create({
         color: '#fff',
     },
     inputContainer: {
-        height: 50,
-        width: '85%',
+        height: 45,
+        width: '80%',
         marginTop: 20,
         borderRadius: 30,
         flexDirection: 'row',
@@ -48,12 +45,11 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
     },
     inputWrapper: {
-        width: '60%',
+        width: '70%',
         marginLeft: 10,
-        // borderWidth: 1,
     },
     input:{
-        fontSize: 14,
+        fontSize: 13,
         color: '#1a303d',
     },
 });
