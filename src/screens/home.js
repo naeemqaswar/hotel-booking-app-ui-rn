@@ -1,8 +1,17 @@
-import React from 'react'
-import { View, Text } from 'react-native'
+import React from 'react';
+import { View, StyleSheet, } from 'react-native';
+
+import TopSection from '../components/home/topSection';
 
 export default function Home() {
-    return <View style={{flex: 1, justifyContent: 'center', alignContent: 'center'}}>
-        <Text>Home</Text>
+
+    return <View style={styles.container}>
+        <TopSection />
     </View>;
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+    },
+});

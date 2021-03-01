@@ -1,7 +1,6 @@
 import * as React from 'react';
 
 import { NavigationContainer } from '@react-navigation/native';
-// import { createMaterialBottomTabNavigator, createBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import TabBar from '../navigation/tabBar';
@@ -18,9 +17,7 @@ export default () => <NavigationContainer>
     <Tab.Navigator
         initialRouteName="home" 
         tabBar={props => <TabBar {...props} />}
-        sceneContainerStyle={{
-            backgroundColor: '#fff',
-        }}
+        sceneContainerStyle={{ backgroundColor: '#fff' }}
     >
         <Tab.Screen name="home" component={Home} />
         <Tab.Screen name="locations" component={Location} />
