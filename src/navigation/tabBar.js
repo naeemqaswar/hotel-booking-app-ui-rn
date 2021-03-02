@@ -5,6 +5,7 @@ import {
     StyleSheet,
     TouchableOpacity,
     TouchableWithoutFeedback,
+    Animated,
 } from 'react-native';
 
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -70,15 +71,15 @@ const TabBar = ({ state, descriptors, navigation }) => {
         }
 
         if(isFocused){
-            return <View style={[styles.navActionBtnFocused]}>
-                <Text style={[styles.navActionText]}>
+            return <Animated.View style={[styles.navActionBtnFocused]}>
+                <Animated.Text style={[styles.navActionText]} ellipsizeMode="clip">
                     {_icon} {_label}
-                </Text>
-            </View>;
+                </Animated.Text>
+            </Animated.View>;
         } else {
-            return <View style={[styles.navActionBtn]}>
+            return <Animated.View style={[styles.navActionBtn]}>
                 {_icon}
-            </View>;
+            </Animated.View>;
         }
     };
 
@@ -109,7 +110,7 @@ const styles = StyleSheet.create({
     container: {
         // borderWidth: 1,
         flexDirection: 'row',
-        width: '85%',
+        width: '90%',
         alignSelf: 'center',
         position: 'absolute',
         bottom: 20,

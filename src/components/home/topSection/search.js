@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     },
     inputContainer: {
         height: 45,
-        width: '80%',
+        width: '90%',
         marginTop: 20,
         borderRadius: 30,
         flexDirection: 'row',
