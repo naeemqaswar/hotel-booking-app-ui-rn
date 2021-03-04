@@ -2,6 +2,8 @@ import * as React from 'react';
 import { View, StyleSheet, Dimensions, Text } from 'react-native';
 import { TabView, SceneMap, TabBar, PagerScroll } from 'react-native-tab-view';
 
+import Slider from './slider';
+
 const FirstRoute = () => (
   <View style={[styles.scene, { backgroundColor: '#ff4081' }]} />
 );
@@ -22,10 +24,10 @@ export default function ListingTabs() {
   ]);
 
   const renderScene = SceneMap({
-    popular: FirstRoute,
-    top_rated: SecondRoute,
-    best_price: FirstRoute,
-    best_choice: SecondRoute,
+    popular: () => <Slider/>,
+    top_rated: () => <Slider/>,
+    best_price: () => <Slider/>,
+    best_choice: () => <Slider/>,
   });
 
   const renderTabBar = props => (
