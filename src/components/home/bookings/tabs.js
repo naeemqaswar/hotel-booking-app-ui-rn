@@ -4,17 +4,9 @@ import { TabView, SceneMap, TabBar, PagerScroll } from 'react-native-tab-view';
 
 import Slider from './slider';
 
-const FirstRoute = () => (
-  <View style={[styles.scene, { backgroundColor: '#ff4081' }]} />
-);
-
-const SecondRoute = () => (
-  <View style={[styles.scene, { backgroundColor: '#673ab7' }]} />
-);
-
 const initialLayout = { width: Dimensions.get('window').width };
 
-export default function ListingTabs() {
+export default function Tabs() {
   const [index, setIndex] = React.useState(0);
   const [routes] = React.useState([
     { key: 'popular', title: 'Popular' },
@@ -42,31 +34,18 @@ export default function ListingTabs() {
             scrollEnabled={false}
             activeColor="black"
             inactiveColor="#d4d4d4"
-            indicatorStyle={{ 
-                backgroundColor: 'transparent',
-            }}
-            labelStyle={{
-                fontSize: 13,
-            }}
-            tabStyle={{
-                padding: 4,
-                width: 'auto',
-            }}
-            style={{ 
-                backgroundColor: 'transparent',
-            }}
+            indicatorStyle={styles.tabBarIndicator}
+            tabStyle={styles.tabBarWrapper}
+            style={styles.tabBar}
             renderLabel={({ route, focused, color }) => (
-                <Text style={{ 
-                    color, 
-                    margin: 8,
-                    fontWeight: focused ? 'bold': '300',
-                    fontWeight: 'bold',
-                    fontFamily: 'sans-serif',
-                    borderBottomWidth: focused ? 3:0,
-                    lineHeight: 25,
-                }}>
-                    {route.title}
-                </Text>
+              <Text style={[styles.tabBarLabel, { 
+                color, 
+                fontWeight: focused ? 'bold': '300', 
+                borderBottomWidth: focused ? 3:0,
+                fontWeight: 'bold',
+              }]}>
+                  {route.title}
+              </Text>
             )}
         />
     </View>
@@ -85,7 +64,20 @@ export default function ListingTabs() {
 }
 
 const styles = StyleSheet.create({
-  scene: {
-    flex: 1,
+  tabBar: {
+    backgroundColor: 'transparent',
+  },
+  tabBarWrapper: {
+    padding: 4,
+    width: 'auto',
+  },
+  tabBarIndicator: {
+    backgroundColor: 'transparent',
+  },
+  tabBarLabel: {
+    margin: 8,
+    fontWeight: 'bold',
+    fontFamily: 'sans-serif',
+    lineHeight: 25,
   },
 });
