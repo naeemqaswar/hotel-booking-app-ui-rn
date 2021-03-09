@@ -14,8 +14,8 @@ export default function Bookings() {
 const styles = StyleSheet.create({
     container:{
         zIndex: 2,
-        height: height/1.7,
-        marginTop: -60,
+        height: height/1.6,
+        marginTop: -90,
         backgroundColor: '#fff',
         borderTopLeftRadius: 50,
         borderTopRightRadius: 50,

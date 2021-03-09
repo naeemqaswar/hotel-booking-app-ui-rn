@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
         position: 'relative',
         backgroundColor:'#1a303d',
         borderRadius: 10,
-        height: 350,
+        height: 370,
         marginHorizontal: 10,
         borderRadius: borderRadius,
         

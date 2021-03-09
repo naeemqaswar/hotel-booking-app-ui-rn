@@ -16,19 +16,14 @@ export default function Tabs() {
   ]);
 
   const renderScene = SceneMap({
-    popular: () => <Slider/>,
-    top_rated: () => <Slider/>,
-    best_price: () => <Slider/>,
-    best_choice: () => <Slider/>,
+    popular: () => <Slider key="popular"/>,
+    top_rated: () => <Slider key="top_rated"/>,
+    best_price: () => <Slider key="best_price"/>,
+    best_choice: () => <Slider key="best_choice"/>,
   });
 
   const renderTabBar = props => (
-    <View 
-        style={{
-            paddingVertical: '2%',
-            paddingHorizontal: '5%',
-        }}
-    >
+    <View style={styles.tabBarContainer}>
         <TabBar
             {...props}
             scrollEnabled={false}
@@ -54,6 +49,7 @@ export default function Tabs() {
   return (
     <TabView
         swipeEnabled = {false}
+        lazy={true}
         renderTabBar={renderTabBar}
         navigationState={{ index, routes }}
         renderScene={renderScene}
@@ -66,6 +62,10 @@ export default function Tabs() {
 const styles = StyleSheet.create({
   tabBar: {
     backgroundColor: 'transparent',
+  },
+  tabBarContainer: {
+    paddingVertical: '2%',
+    paddingHorizontal: '5%',
   },
   tabBarWrapper: {
     padding: 4,

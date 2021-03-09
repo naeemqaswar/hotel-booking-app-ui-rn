@@ -24,7 +24,7 @@ export default function Search() {
 
 const styles = StyleSheet.create({
     container: {
-        height: '75%',
+        height: '70%',
         justifyContent: 'center',
         alignItems: 'center',
     },

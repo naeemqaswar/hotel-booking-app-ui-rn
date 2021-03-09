@@ -37,25 +37,10 @@ export default function Slider() {
             members: 200,
             rating: 4,
         },
-        {
-            title: "Grand Luxury",
-            image: require("../../../../assets/home/bookings/booking-1.png"),
-            tag: "Featured",
-            members: 500,
-            rating: 3,
-        },
-        {
-            title:"Otman Hall",
-            image: require("../../../../assets/home/bookings/booking-2.png"),
-            tag: "New",
-            members: 200,
-            rating: 4,
-        },
     ]);
 
     return <View style={styles.container}>
-        <View style={{ flex: 1, flexDirection:'row'}}>
-            {/* <Booking {...carouselItems[0]} /> */}
+        <View style={styles.wrapper}>
             <Carousel
                 layout={"default"}
                 ref={ref => carousel = ref}
@@ -76,6 +61,9 @@ export default function Slider() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        // borderWidth: 1,
+    },
+    wrapper: {
+        flex: 1,
+        flexDirection:'row',
     },
 });
