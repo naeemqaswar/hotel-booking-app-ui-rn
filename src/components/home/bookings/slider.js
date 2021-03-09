@@ -23,6 +23,34 @@ export default function Slider() {
             members: 200,
             rating: 4,
         },
+        {
+            title: "Grand Luxury",
+            image: require("../../../../assets/home/bookings/booking-1.png"),
+            tag: "Featured",
+            members: 500,
+            rating: 3,
+        },
+        {
+            title:"Otman Hall",
+            image: require("../../../../assets/home/bookings/booking-2.png"),
+            tag: "New",
+            members: 200,
+            rating: 4,
+        },
+        {
+            title: "Grand Luxury",
+            image: require("../../../../assets/home/bookings/booking-1.png"),
+            tag: "Featured",
+            members: 500,
+            rating: 3,
+        },
+        {
+            title:"Otman Hall",
+            image: require("../../../../assets/home/bookings/booking-2.png"),
+            tag: "New",
+            members: 200,
+            rating: 4,
+        },
     ]);
 
     return <View style={styles.container}>

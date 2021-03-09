@@ -72,6 +72,12 @@ const styles = StyleSheet.create({
         height: 350,
         marginHorizontal: 10,
         borderRadius: borderRadius,
+        
+        elevation: 5,
+        shadowColor: '#000',
+        shadowOffset: {width: 0, height: 0},
+        shadowOpacity: 0.1,
+        shadowRadius: 5,
     },
     featuredTag: {
         paddingVertical: 10,
