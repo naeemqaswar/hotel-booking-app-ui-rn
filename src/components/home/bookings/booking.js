@@ -1,20 +1,20 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet } from 'react-native';
+import { View, Text, Image, StyleSheet, TouchableWithoutFeedback } from 'react-native';
 
 import StarRating from 'react-native-star-rating';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
+import * as RootNavigation from '../../../navigation/RootNavigation';
+
 const borderRadius = 10;
 
-export default function Booking(props) {
-    const {item} = props;
+function Booking({item, navigation}) {
+    // const {item} = props;
     const {title, image, tag, members, rating} = item;
 
-    const _renderTag = () => (
-        <View style={styles.featuredTag}>
-            <Text style={styles.featuredText}>{tag}</Text>
-        </View>
-    )
+    const _renderTag = () => <View style={styles.featuredTag}>
+        <Text style={styles.featuredText}>{tag}</Text>
+    </View>;
 
     const _renderInfo = () => (
         <View style={styles.infoContainer}>
@@ -53,16 +53,20 @@ export default function Booking(props) {
         </View>
     )
     
-    return <View style={styles.container}>
+    return <TouchableWithoutFeedback onPress={()=> RootNavigation.navigate("booking")}>
+        <View style={styles.container}>
         <Image 
             source={image}
             resizeMode="cover"
             style={styles.image}
         />
-        {_renderTag()}
-        {_renderInfo()}
-    </View>;
+            {_renderTag()}
+            {_renderInfo()}
+        </View>
+    </TouchableWithoutFeedback>;
 }
+
+export default Booking;
 
 const styles = StyleSheet.create({
     container: {

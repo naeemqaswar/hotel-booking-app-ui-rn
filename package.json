@@ -11,6 +11,7 @@
     "@react-native-masked-view/masked-view": "^0.2.2",
     "@react-navigation/bottom-tabs": "^5.11.8",
     "@react-navigation/native": "^5.9.3",
+    "@react-navigation/stack": "^5.14.3",
     "expo": "~40.0.0",
     "expo-status-bar": "~1.0.3",
     "react": "16.13.1",
@@ -24,7 +25,8 @@
     "react-native-snap-carousel": "^3.9.1",
     "react-native-star-rating": "^1.1.0",
     "react-native-tab-view": "^2.15.2",
-    "react-native-web": "^0.15.0"
+    "react-native-web": "^0.15.0",
+    "react-navigation": "^4.4.4"
   },
   "devDependencies": {
     "@babel/core": "~7.9.0"
