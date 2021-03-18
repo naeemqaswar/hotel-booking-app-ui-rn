@@ -11,9 +11,6 @@ import {
 } from 'react-native';
 
 import StarRating from 'react-native-star-rating';
-import Icon from 'react-native-vector-icons/FontAwesome5';
-
-import * as RootNavigation from '../navigation/RootNavigation';
 
 import Header from '../components/booking/Header';
 

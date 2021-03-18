@@ -9,6 +9,7 @@ import { navigationRef } from './RootNavigation';
 import TabBar from '../navigation/tabBar';
 
 import Home from '../screens/home';
+import Login from '../screens/login';
 import Booking from '../screens/booking';
 import Account from '../screens/demos/account';
 import Location from '../screens/demos/location';
@@ -34,7 +35,8 @@ function Main(){
 }
 
 export default () => <NavigationContainer ref={navigationRef}>
-    <Stack.Navigator initialRouteName="main">
+    <Stack.Navigator initialRouteName="login">
+        <Stack.Screen name="login" component={Login} options={{ headerShown: false }}  />
         <Stack.Screen name="main" component={Main} options={{ headerShown: false }}  />
         <Stack.Screen name="booking" component={Booking} options={{ headerShown: false }}  />
     </Stack.Navigator>
