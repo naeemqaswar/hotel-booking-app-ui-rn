@@ -3,13 +3,14 @@ import {
     View, 
     Text, 
     Image, 
-    TextInput,
     StyleSheet, 
-    TouchableHighlight,
     TouchableWithoutFeedback,
 } from 'react-native';
 
 import * as RootNavigation from '../navigation/RootNavigation';
+
+import Input from '../components/login/Input';
+import Button from '../components/login/Button';
 
 export default function Login() {
     const [passwordSecure, setPasswordSecure] = useState(true);
@@ -24,50 +25,20 @@ export default function Login() {
         <View style={styles.formContainer}>
             <Text style={styles.title}>Hotel Booking</Text>
             <Text style={styles.subtitle}>Easy To Book Your Hotel</Text>
-            <View style={styles.inputContainer}>
-                <View style={styles.inputGroup}>
-                    <Image
-                        source={require("../../assets/login/mail.png")}
-                        style={styles.inputIcon}
-                        resizeMode="contain"
-                    />
-                    <TextInput
-                        placeholder="Email Address" 
-                        placeholderTextColor="#fff"
-                        style={styles.inputField}
-                    />
-                </View>
-                <View style={{height: 20}} />
-                <View style={styles.inputGroup}>
-                    <Image
-                        source={require("../../assets/login/key.png")}
-                        style={styles.inputIcon}
-                        resizeMode="contain"
-                    />
-                    <TextInput
-                        placeholder="Password"
-                        secureTextEntry={passwordSecure}
-                        placeholderTextColor="#fff"
-                        style={[styles.inputField, styles.inputPassword]}
-                    />
-                    <TouchableWithoutFeedback onPress={()=>setPasswordSecure(!passwordSecure)}>
-                        <View style={styles.inputAction}>
-                            <Image
-                                source={require("../../assets/login/view.png")}
-                                style={[styles.inputIcon, styles.inputEndingIcon]}
-                                resizeMode="contain"
-                            />
-                        </View>
-                    </TouchableWithoutFeedback>
-                </View>
+            <View style={styles.inputsContainer}>
+                <Input
+                    placeholder="Email Address"
+                    leadingIcon={require("../../assets/login/mail.png")}
+                />
+                <View style={{height: 25}} />
+                <Input
+                    placeholder="Password"
+                    endingAction={()=>setPasswordSecure(!passwordSecure)}
+                    leadingIcon={require("../../assets/login/key.png")}
+                    endingIcon={require("../../assets/login/view.png")}
+                />
             </View>
-            <TouchableHighlight 
-                onPress={()=> RootNavigation.navigate("main")}
-                style={styles.submitAction}
-                underlayColor="rgba(0, 0, 0, 0.7)"
-            >
-                <Text style={styles.submitText}>Login to account</Text>
-            </TouchableHighlight>
+            <Button title="Login to account" action={()=> RootNavigation.navigate("main")} />
             <View style={styles.accountActions}>
                 <TouchableWithoutFeedback onPress={()=>{}}>
                     <Text style={styles.accountActionText}>Forgot Password?</Text>
@@ -112,63 +83,13 @@ const styles = StyleSheet.create({
         color: '#fff',
         textAlign: 'center',
     },
-    inputContainer: {
-        paddingVertical: 40,
+    inputsContainer: {
+        paddingVertical: 30,
         width: '100%',
-    },
-    inputGroup:{
-        width: '100%',
-        alignItems: 'center',
-        flexDirection: 'row',
-        paddingVertical: 15,
-        paddingHorizontal: 25,
-        borderTopLeftRadius: 15,
-        borderTopRightRadius: 15,
-        borderBottomLeftRadius: 15,
-        borderBottomRightRadius: 15,
-        backgroundColor: 'rgba(225, 225, 225, 0.5)'
-    },
-    inputIcon:{
-        width: 15,
-        height: 15,
-        marginRight: 20,
-    },
-    inputEndingIcon:{
-        width: 20,
-        height: 20,
-        marginRight: 0,
-    },
-    inputField:{
-        color: '#fff',
-        fontSize: 13,
-        width: '90%',
-    },
-    inputPassword:{
-        width: '80%',
-    },
-    inputAction:{
-        paddingHorizontal: 10,
-        paddingVertical: 5,
-    },
-    submitAction:{
-        width: '100%',
-        alignItems: 'center',
-        paddingVertical: 20,
-        paddingHorizontal: 25,
-        borderTopLeftRadius: 15,
-        borderTopRightRadius: 15,
-        borderBottomLeftRadius: 15,
-        borderBottomRightRadius: 15,
-        backgroundColor: 'rgba(0, 0, 0, 0.5)'
-    },
-    submitText:{
-        color: '#fff',
-        fontSize: 13,
-        textAlign: 'center',
     },
     accountActions:{
         width: '100%',
-        marginTop: 20,
+        marginTop: 25,
         flexDirection: 'row',
         justifyContent: 'space-evenly',
     },
