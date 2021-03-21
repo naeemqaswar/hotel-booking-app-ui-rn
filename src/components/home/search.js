@@ -3,28 +3,26 @@ import { View, Text, StyleSheet, TextInput } from 'react-native';
 
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
-export default function Search() {
-    const _renderSearchInput = () => {
-        return <View style={styles.inputContainer}>
+export default function Search(props) {
+    const {title, inputPlaceholder} = props;
+
+    return <View style={styles.container}>
+        <Text style={styles.title}>{title}</Text>
+        <View style={styles.inputContainer}>
             <Icon name="search" color="#1a303d" size={20}/>
             <View style={styles.inputWrapper}>
                 <TextInput 
-                    placeholder="Search the hotel, motel and club"
+                    placeholder={inputPlaceholder}
                     style={styles.input} 
                 />
             </View>
         </View>
-    };
-
-    return <View style={styles.container}>
-        <Text style={styles.title}>Search your desire hotel</Text>
-        {_renderSearchInput()}
     </View>;
 }
 
 const styles = StyleSheet.create({
     container: {
-        height: '70%',
+        height: '65%',
         justifyContent: 'center',
         alignItems: 'center',
     },

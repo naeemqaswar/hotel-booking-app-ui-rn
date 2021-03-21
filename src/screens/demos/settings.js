@@ -1,10 +1,10 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+
+import Placeholder from "../../components/demo/Placeholder";
 
 export default function Settings() {
-    return (
-        <View>
-            <Text>Settings</Text>
-        </View>
-    )
+    return <Placeholder 
+        title="ACCOUNT SETTINGS"
+        source={require('../../../assets/demos/settings.png')}
+    />;
 }

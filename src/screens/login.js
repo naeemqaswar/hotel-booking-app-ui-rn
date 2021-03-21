@@ -15,7 +15,7 @@ import Button from '../components/login/Button';
 export default function Login() {
     const [passwordSecure, setPasswordSecure] = useState(true);
 
-    return <View style={[styles.container]}>
+    return <View style={styles.container}>
         <Image
             resizeMode="cover"
             style={styles.backgroundImage}

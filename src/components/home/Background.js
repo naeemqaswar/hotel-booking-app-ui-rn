@@ -1,10 +1,12 @@
 import React from 'react';
 import { View, StyleSheet, Image } from 'react-native';
 
-export default function SectionBackground() {
+export default function Background(props) {
+    const {image} = props;
+
     return <View style={styles.container}>
         <Image
-            source={require('../../../../assets/home/header-bg.png')}
+            source={image}
             resizeMode="cover"
             style={styles.image}
         />

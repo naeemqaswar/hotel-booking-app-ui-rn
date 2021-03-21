@@ -4,56 +4,51 @@ import { View, Text, Image, StyleSheet, TouchableWithoutFeedback } from 'react-n
 import StarRating from 'react-native-star-rating';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
-import * as RootNavigation from '../../../navigation/RootNavigation';
-
 const borderRadius = 10;
 
-function Booking({item, navigation}) {
-    // const {item} = props;
+function Booking({item, onTap}) {
     const {title, image, tag, members, rating} = item;
 
-    const _renderTag = () => <View style={styles.featuredTag}>
-        <Text style={styles.featuredText}>{tag}</Text>
+    const _renderTag = () => <View style={styles.tag}>
+        <Text style={styles.tagText}>{tag}</Text>
     </View>;
 
-    const _renderInfo = () => (
-        <View style={styles.infoContainer}>
-            <View style={styles.infoText}>
-                <View style={styles.leftInfo}>
-                    <View style={styles.titleWrapper}>
-                        <Text style={styles.title}>{title}</Text>
-                    </View>
-                    <View style={styles.membersContainer}>
-                        <Image 
-                            source={require("../../../../assets/home/bookings/members.png")}
-                            resizeMode="contain"
-                            style={styles.membersIcon}
-                        />
-                        <View style={styles.membersTextWrapper}>
-                            <Text style={styles.membersText}>{members} people</Text>
-                        </View>
-                    </View>
+    const _renderInfo = () => <View style={styles.infoContainer}>
+        <View style={styles.infoText}>
+            <View style={styles.leftInfo}>
+                <View style={styles.titleWrapper}>
+                    <Text style={styles.title}>{title}</Text>
                 </View>
-                <View style={styles.rightInfo}>
-                    <Icon name="bookmark" color="#fff" size={21}/>
+                <View style={styles.membersContainer}>
+                    <Image 
+                        source={require("../../../../assets/home/bookings/members.png")}
+                        resizeMode="contain"
+                        style={styles.membersIcon}
+                    />
+                    <View style={styles.membersTextWrapper}>
+                        <Text style={styles.membersText}>{members} people</Text>
+                    </View>
                 </View>
             </View>
-            <View style={styles.ratingsWrapper}>
-                <StarRating
-                    disabled={false}
-                    maxStars={5}
-                    rating={rating}
-                    starSize={14}
-                    fullStar="star"
-                    emptyStar="star"
-                    fullStarColor="#dbb16c"
-                    emptyStarColor="#6a6751"
-                />
+            <View style={styles.rightInfo}>
+                <Icon name="bookmark" color="#fff" size={21}/>
             </View>
         </View>
-    )
+        <View style={styles.ratingsWrapper}>
+            <StarRating
+                disabled={false}
+                maxStars={5}
+                rating={rating}
+                starSize={14}
+                fullStar="star"
+                emptyStar="star"
+                fullStarColor="#dbb16c"
+                emptyStarColor="#6a6751"
+            />
+        </View>
+    </View>;
     
-    return <TouchableWithoutFeedback onPress={()=> RootNavigation.navigate("booking")}>
+    return <TouchableWithoutFeedback onPress={onTap}>
         <View style={styles.container}>
         <Image 
             source={image}
@@ -83,7 +78,7 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.1,
         shadowRadius: 5,
     },
-    featuredTag: {
+    tag: {
         paddingVertical: 10,
         paddingLeft: 25,
         paddingRight: 25,
@@ -95,7 +90,7 @@ const styles = StyleSheet.create({
         zIndex: 9,
         backgroundColor: '#1a303d',
     },
-    featuredText: {
+    tagText: {
         color: '#fff',
         fontSize: 12,
     },

@@ -1,10 +1,11 @@
-import React from 'react'
-import { View, Text } from 'react-native'
+import React from 'react';
+
+import Placeholder from "../../components/demo/Placeholder";
 
 export default function Bookmarks() {
-    return (
-        <View>
-            <Text>Bookmarks</Text>
-        </View>
-    )
+    return <Placeholder  
+        size={235}
+        title="FAVORITE BOOKINGS"
+        source={require('../../../assets/demos/bookmarks.png')}
+    />;
 }

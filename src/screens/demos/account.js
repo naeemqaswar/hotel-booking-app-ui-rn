@@ -1,10 +1,11 @@
-import React from 'react'
-import { View, Text } from 'react-native'
+import React from 'react';
+
+import Placeholder from "../../components/demo/Placeholder";
 
 export default function Account() {
-    return (
-        <View>
-            <Text>Account</Text>
-        </View>
-    )
+    return <Placeholder 
+        size={280}
+        title="PROFILE ACCOUNT"
+        source={require('../../../assets/demos/account.png')}
+    />;
 }

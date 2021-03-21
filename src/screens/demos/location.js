@@ -1,10 +1,10 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+
+import Placeholder from "../../components/demo/Placeholder";
 
 export default function Location() {
-    return (
-        <View>
-            <Text>Location</Text>
-        </View>
-    )
+    return <Placeholder 
+        title="ALL HOTELS"
+        source={require('../../../assets/demos/map-locations.png')}
+    />;
 }

@@ -1,16 +1,15 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet, TouchableWithoutFeedback } from 'react-native';
+import { View, Image, StyleSheet, TouchableWithoutFeedback } from 'react-native';
 
-import StarRating from 'react-native-star-rating';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
-import * as RootNavigation from '../../navigation/RootNavigation';
+function TopBar(props) {
+    const {leadingAction, favoriteAction = ()=>{}} = props;
 
-function Header() {
-    const _renderBackAction = ()=>{
-        return <View style={styles.backActionContainer}>
-            <TouchableWithoutFeedback onPress={()=>RootNavigation.pop()}>
-                <View style={styles.backActionWrapper}>
+    const _renderLeadingAction = ()=>{
+        return <View style={styles.leadingContainer}>
+            <TouchableWithoutFeedback onPress={leadingAction}>
+                <View style={styles.leadingWrapper}>
                     <Image
                         source={require("../../../assets/booking/back.png")}
                         resizeMode="contain"
@@ -18,26 +17,26 @@ function Header() {
                     />
                 </View>
             </TouchableWithoutFeedback>
-        </View>  
+        </View>;  
     };
 
     const _renderFavoriteAction = ()=>{
         return <View style={styles.favoriteActionContainer}>
-            <TouchableWithoutFeedback onPress={()=>{}}>
+            <TouchableWithoutFeedback onPress={favoriteAction}>
                 <View style={styles.favoriteActionWrapper}>
                     <Icon name="heart" size={25} color="#fff" solid={true} />
                 </View>
             </TouchableWithoutFeedback>
-        </View>
+        </View>;
     };
 
     return <View style={styles.container}>
-        {_renderBackAction()}
+        {_renderLeadingAction()}
         {_renderFavoriteAction()}
     </View>;
 };
 
-export default Header;
+export default TopBar;
 
 const styles = StyleSheet.create({
     container: {
@@ -49,11 +48,11 @@ const styles = StyleSheet.create({
         top: 0,
         zIndex: 9,
     },
-    backActionContainer:{
+    leadingContainer:{
         flex: 1,
         flexDirection: 'row',
     },
-    backActionWrapper:{
+    leadingWrapper:{
         width: 45,
         height: 45,
         borderRadius: 150,

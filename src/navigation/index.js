@@ -8,13 +8,13 @@ import { navigationRef } from './RootNavigation';
 
 import TabBar from '../navigation/tabBar';
 
-import Home from '../screens/home';
-import Login from '../screens/login';
-import Booking from '../screens/booking';
-import Account from '../screens/demos/account';
-import Location from '../screens/demos/location';
-import Bookmarks from '../screens/demos/bookmarks';
-import Settings from '../screens/demos/settings';
+import Home from '../screens/Home';
+import Login from '../screens/Login';
+import Booking from '../screens/Booking';
+import Account from '../screens/demos/Account';
+import Location from '../screens/demos/Location';
+import Bookmarks from '../screens/demos/Bookmarks';
+import Settings from '../screens/demos/Settings';
 
 const Stack = createStackNavigator();
 

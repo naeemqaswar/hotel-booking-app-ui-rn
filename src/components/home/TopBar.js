@@ -3,17 +3,19 @@ import { View, StyleSheet, Image } from 'react-native';
 
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
-export default function Header() {
+export default function TopBar(props) {
+    const {menuIcon, profileImage} = props;
+
     return <View style={styles.container}>
         <View style={styles.section}>
-            <Icon name="bars" color="#edecec" size={22}/>
+            <Icon name={menuIcon} color="#edecec" size={22}/>
         </View>
         <View style={[styles.section, {alignItems: 'flex-end'}]}>
-            <View style={styles.imageWrapper}>
+            <View style={styles.profileImageWrapper}>
                 <Image
-                    source={require('../../../../assets/home/avatar.png')}
+                    source={profileImage}
                     resizeMode="cover"
-                    style={styles.image}
+                    style={styles.profileImage}
                 />
             </View>
         </View>
@@ -31,11 +33,11 @@ const styles = StyleSheet.create({
         alignItems: 'flex-start',
         justifyContent: 'center',
     },
-    imageWrapper:{
+    profileImageWrapper:{
         height: 40,
         width: 40,
     },
-    image:{
+    profileImage:{
         width: '100%',
         height: '100%',
         borderRadius: 30,

@@ -1,56 +1,30 @@
-import React, {useState, useCallback} from 'react';
+import React, {useState} from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
 import Carousel from 'react-native-snap-carousel';
 
-import Booking from './booking';
+import * as RootNavigation from '../../../navigation/RootNavigation';
 
-export default function Slider() {
+import Booking from './Booking';
+
+export default function Slider(props) {
     let carousel;
+
+    const {items} = props;
     const [activeIndex, setActiveIndex] = useState(0);
-    const [carouselItems, setCarouselItems] = useState([
-        {
-            title: "Grand Luxury",
-            image: require("../../../../assets/home/bookings/booking-1.png"),
-            tag: "Featured",
-            members: 500,
-            rating: 3,
-        },
-        {
-            title:"Otman Hall",
-            image: require("../../../../assets/home/bookings/booking-2.png"),
-            tag: "New",
-            members: 200,
-            rating: 4,
-        },
-        {
-            title: "Grand Luxury",
-            image: require("../../../../assets/home/bookings/booking-1.png"),
-            tag: "Featured",
-            members: 500,
-            rating: 3,
-        },
-        {
-            title:"Otman Hall",
-            image: require("../../../../assets/home/bookings/booking-2.png"),
-            tag: "New",
-            members: 200,
-            rating: 4,
-        },
-    ]);
 
     return <View style={styles.container}>
         <View style={styles.wrapper}>
             <Carousel
                 layout={"default"}
                 ref={ref => carousel = ref}
-                data={carouselItems}
+                data={items}
                 sliderWidth={250}
                 itemWidth={250}
                 inactiveSlideOpacity={1}
                 inactiveSlideScale={1}
                 ItemSeparatorComponent={()=><View style={{width: 0}}/>}
-                renderItem={(itemProp) => <Booking {...itemProp} />}
+                renderItem={(itemProp) => <Booking {...itemProp} onTap={()=> RootNavigation.navigate("booking")} />}
                 onSnapToItem = { index => setActiveIndex(index) } 
             />
         </View>
