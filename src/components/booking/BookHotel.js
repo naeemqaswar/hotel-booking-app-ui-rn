@@ -7,6 +7,7 @@ export default function BookHotel(props) {
     return <TouchableHighlight
         onPress={action}
         style={styles.button}
+        underlayColor="#0e0e0e"
     >
         <View style={styles.wrapper}>
             <Text style={styles.text}>{title}</Text>

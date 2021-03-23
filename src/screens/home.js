@@ -6,6 +6,8 @@ import Search from '../components/home/search';
 import Background from '../components/home/Background';
 import Bookings from '../components/home/bookings/index';
 
+import * as RootNavigation from '../navigation/RootNavigation';
+
 const {height} = Dimensions.get('screen');
 
 const bookings = [
@@ -53,8 +55,9 @@ export default function Home() {
             <Background image={require('../../assets/home/header-bg.png')} />
             <View style={styles.headerWrapper}>
                 <TopBar 
-                    menuIcon="bars" 
-                    profileImage={require('../../assets/home/avatar.png')} 
+                    menuIcon="bars"
+                    profileImage={require('../../assets/home/avatar.png')}
+                    profileAction={()=>RootNavigation.pop()}
                 />
                 <Search
                     title="Search your desire hotel"

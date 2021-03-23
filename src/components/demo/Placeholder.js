@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     title: {
-        fontSize: 20,
+        fontSize: 22,
         marginTop: 30,
         fontWeight: 'bold',
         fontFamily: 'sans-serif',
