@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Hotel Booking",
-    "slug": "HotelBookingUIRN",
+    "name": "Hotel Booking App",
+    "slug": "HotelBookingAppUIRN",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -21,10 +21,9 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
+        "foregroundImage": "./assets/adaptive-icon.png"
       },
-      "package": "com.naeemqaswar.HotelBookingUIRN"
+      "package": "com.naeemqaswar.HotelBookingAppUIRN"
     },
     "web": {
       "favicon": "./assets/favicon.png"

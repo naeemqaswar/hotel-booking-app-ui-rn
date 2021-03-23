@@ -1,6 +1,6 @@
 # Hotel Booking App (UI) - React Native
 
-Hotel Booking App (UI) created with **React Native**, based on a design concept found on UpLabs, showing a bit different perspective about how the listing and detail of a booking can be displayed in a mobile app. **Application release is available under this drive link - [App APK](#)**
+Hotel Booking App (UI) created with **React Native**, based on a design concept found on UpLabs, showing a bit different perspective about how the listing and detail of a booking can be displayed in a mobile app. **Application release is available under this drive link - [App APK](https://drive.google.com/file/d/1EldUfRZPt2q2Pt0KOSpwaTFvTQ2SgBme/view?usp=sharing)**
 
 ### Preview
 <div align="center">
