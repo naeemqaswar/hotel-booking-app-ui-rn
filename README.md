@@ -4,7 +4,7 @@ Hotel Booking App (UI) created with **React Native**, based on a design concept 
 
 ### Preview
 <div align="center">
-<img src="https://raw.githubusercontent.com/naeemqaswar/hotel-booking-app-ui-rn/main/assets/demo/preview.png"/>
+<img src="https://raw.githubusercontent.com/naeemqaswar/hotel-booking-app-ui-rn/main/assets/demos/preview.png"/>
 </div>
 
 ## UI Credit
