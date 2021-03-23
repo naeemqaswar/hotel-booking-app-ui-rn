@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "HotelBookingUIRN",
+    "name": "Hotel Booking",
     "slug": "HotelBookingUIRN",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -23,7 +23,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.naeemqaswar.HotelBookingUIRN"
     },
     "web": {
       "favicon": "./assets/favicon.png"
